@@ -17,6 +17,13 @@ export const routes : Routes = [
     {path:'home', component:HomeComponent},
     {path:'about', component:AboutComponent},
     {path:'contact', component:ContactComponent, canDeactivate:[(comp: ContactComponent)=>{return comp.canExit();}]},
+    
+    //lazy loading
+    // {
+    //     path: 'courses',
+    //     loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule)
+    // },
+    
     {path:'courses', component:CoursesComponent, resolve:{courses:resolve}},
     // {path:'courses/:search', component:CoursesComponent},
     // {path:'courses/course/:id', component: CourseDetailComponent},
